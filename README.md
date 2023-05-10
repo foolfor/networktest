@@ -1,4 +1,4 @@
-# pytest tool for network equipment
+# A CLI based pytest network testing tool
 
 
 
