@@ -5,8 +5,7 @@
 Example:
 
 ```python
-from ssh_test import ssh_cmd
-from ssh_test import ssh_contain
+from ssh_test import ssh_cmd, ssh_contain
 
 # the management ip address of DUT
 host = "192.168.0.1"
