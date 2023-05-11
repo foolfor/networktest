@@ -28,7 +28,7 @@ def test_version():
 
 ## Do not test the same command in one case
 
-`ssh_cmd.send_command` will return a dict. So the elements of  the `commands` list will be the key for the `result` dict. So that, the elements of the `commands` list cannot be duplicated.
+The `ssh_cmd.send_command` will return a dict. So the elements of  the `commands` list will be the keys for the `result` dict. So that, the elements of the `commands` list cannot be duplicated.
 
 The following example is incorrect.
 
@@ -44,7 +44,7 @@ The following example is correct.
 commands = ["sys", "int g 1/0/0", "quit", "exit"]
 ```
 
-If you want to test the `exit` function in the same case, you must find another command like `quit`. If there are no two different command to distingush between, I suggest you split a test case into two.
+If you want to test the `exit` function in the same case, you must find another command like `quit`. If there are no two different command to distinguish between, I suggest you split a test case into two.
 
 ## Using `secret` to distinguish different vendors
 
