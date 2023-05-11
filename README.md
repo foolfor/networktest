@@ -19,10 +19,12 @@ secret = "cisco"
 # commands = ["show version", "show clock"]
 commands = ["show version", ]
 
+result = ssh_cmd.send_command(host, username, password, secret, commands)
+value = result[commands[0]]
+
 
 def test_version():
-    result = ssh_cmd.send_command(host, username, password, secret, commands)
-    value = result[commands[0]]
     assert ssh_contain.cmd_contain(value, 'UUID')
+
 ```
 

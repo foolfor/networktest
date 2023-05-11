@@ -1,5 +1,5 @@
 from ssh_test import ssh_cmd, ssh_contain
-
+from pprint import pprint
 
 # the management ip address of DUT
 host = "192.168.0.1"
@@ -13,8 +13,15 @@ secret = "cisco"
 # commands = ["show version", "show clock"]
 commands = ["show version", ]
 
+result = ssh_cmd.send_command(host, username, password, commands, secret)
+value = result[commands[0]]
+
 
 def test_version():
-    result = ssh_cmd.send_command(host, username, password, secret, commands)
-    value = result[commands[0]]
     assert ssh_contain.cmd_contain(value, 'UUID')
+
+
+if __name__ == "__main__":
+    print(value)
+    print("======================")
+    pprint(result, width=20)
