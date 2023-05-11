@@ -17,7 +17,7 @@ secret = "cisco"
 # commands = ["show version", "show clock"]
 commands = ["show version", ]
 
-result = ssh_cmd.send_command(host, username, password, secret, commands)
+result = ssh_cmd.send_command(host, username, password, commands, secret)
 value = result[commands[0]]
 
 
